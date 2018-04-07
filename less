@@ -1,0 +1,30 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int pyHeight = 0;
+
+    do
+    {
+        printf("How many blocks high do you want your pyramid?: ");
+        pyHeight = get_int();// get int will only take in an int;
+    }
+
+    while (pyHeight < 1 || pyHeight > 23);
+
+    for (int line = 0; line < pyHeight; line++)
+    {
+        for (int spaces = pyHeight - line; spaces > 1; spaces--)
+        {
+            printf(" ");
+        }
+        for (int hashes = 0; hashes < line+2; hashes++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+
+
+}
